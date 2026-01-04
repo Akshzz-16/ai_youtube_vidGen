@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+# Allow specific files
+!main.py
+!requirements.txt
+!check_ffmpeg.py
+!.gitignore
+
+# Ignore folders
+data/
+assets/
+output/
+venv/
+__pycache__/
+*.pyc
