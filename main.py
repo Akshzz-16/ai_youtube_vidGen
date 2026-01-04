@@ -40,18 +40,19 @@ os.environ["PATH"] += os.pathsep + ffmpeg_dir
 # --- CONFIGURATION & ASSET MANAGEMENT ---
 
 class Config:
-    """Central configuration for the application."""
-    PROJECT_ROOT = Path("c:/impFiles/projects/ai_video_generator") # Using the workspace path
-    DATA_DIR = PROJECT_ROOT / "data"
-    ASSETS_DIR = PROJECT_ROOT / "assets"
-    OUTPUT_DIR = PROJECT_ROOT / "output"
+    """Project configuration and API keys."""
+    # Assets & Persistence
+    BASE_DIR = Path(__file__).parent
+    DATA_DIR = BASE_DIR / "data"
+    ASSETS_DIR = BASE_DIR / "assets"
+    OUTPUT_DIR = BASE_DIR / "output"
     
     # Files
     USED_TOPICS_FILE = DATA_DIR / "used_topics.json"
     
-    # API Keys (Loaded from Env for security, fallback to provided key)
-    PEXELS_API_KEY = os.getenv("PEXELS_API_KEY", "vSqQLOVzRVH6t1F1HwxITiV04xk3sWyPJFgoPsUaLvXHh1HMSlyTOkI2")
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    # API Keys (Loaded from Env for security)
+    PEXELS_API_KEY = os.getenv("PEXELS_API_KEY") 
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") # Optional: fallback to templates if not provided
 
 class AssetManager:
     """Manages directory creation and file persistence."""

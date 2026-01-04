@@ -5,7 +5,13 @@
 !main.py
 !requirements.txt
 !check_ffmpeg.py
+!README.md
+!.env.example
 !.gitignore
+
+# Environment Variables
+.env
+.env.local
 
 # Ignore folders
 data/
